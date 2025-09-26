@@ -300,3 +300,92 @@ header a:hover{text-decoration:underline}
   border-color: rgba(143,182,255,.45);
   background: rgba(143,182,255,.12);
 }
+
+/* Title + GPA chip alignment */
+.title-row{
+  display:inline-flex;          /* keep it tight with the heading */
+  align-items: baseline;        /* align on the text baseline */
+  gap:10px;
+}
+
+.title-row h2{
+  margin:0;
+  line-height:1;                /* remove extra vertical space */
+}
+
+/* subtle nudge so the pill sits perfectly with the cap height */
+.title-row .chip{
+  display:inline-flex; align-items:center;
+  line-height:1;
+  padding:.18rem .55rem;
+  position: relative;
+  top:-2px;                     /* adjust -1 to -3px to taste */
+}
+
+/* ---------- Internships / Experience (fixed) ---------- */
+
+/* grid with a minimum card width so text doesn't get squeezed */
+.exp-list{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap:18px;
+}
+
+/* card as a flex row: logo + body */
+.exp{
+  display:flex; align-items:flex-start; gap:14px;
+  padding:14px;
+  border-radius:18px;
+  border:1px solid var(--card-edge);
+  background:linear-gradient(180deg, #1c2023 0%, #151719 100%);
+  box-shadow:0 18px 44px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.02) inset;
+}
+
+/* fixed-size logo column */
+.exp-logo{
+  flex:0 0 64px;
+  width:64px; height:64px; border-radius:14px; object-fit:cover;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.06);
+  box-shadow:0 8px 22px rgba(0,0,0,.35);
+}
+
+/* text column expands and can actually use the width */
+.exp-body{
+  flex:1 1 auto; min-width:0;
+  display:flex; flex-direction:column; gap:8px;
+}
+
+/* top row: title on left, dates on right */
+.exp-top{
+  display:flex; flex-wrap:wrap; gap:10px;
+  align-items:baseline; justify-content:space-between;
+}
+
+.exp-role{ margin:0; font-size:1.02rem; font-weight:700; letter-spacing:.2px; }
+.exp-dates{ color:var(--ink-dim); font-size:.92rem; }
+
+.exp-summary{ margin:0; color:var(--ink-dim); }
+
+/* bullets & wrapping behave like normal text (no weird word-per-line) */
+.exp-points{ margin:0; padding-left:18px; line-height:1.7; }
+.exp-points li{ margin:2px 0; }
+.exp-body, .exp-body *{
+  white-space:normal; word-break:normal; overflow-wrap:break-word;
+}
+
+/* tags */
+.tags{
+  display:flex; flex-wrap:wrap; gap:8px; margin:2px 0 0; padding:0; list-style:none;
+}
+.tags li{
+  font-size:.82rem; color:var(--ink-dim);
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.03);
+  padding:.2rem .5rem; border-radius:999px;
+}
+
+/* responsive: allow single column on small screens */
+@media (max-width:720px){
+  .exp-list{ grid-template-columns: 1fr; }
+}
