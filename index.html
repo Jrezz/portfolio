@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Justin Rzepko — Portfolio</title>
+
+  <!-- Font + CSS -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Justin Rzepko</h1>
+    <p>Software Engineer • ML • Web — <a href="mailto:rzepkojustin@gmail.com">rzepkojustin@gmail.com</a></p>
+  </header>
+
+  <!-- Quick nav (optional but nice) -->
+<nav class="top-nav" aria-label="Primary">
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="assets/Justin_Rzepko_Resume.pdf" target="_blank" rel="noopener">Resumé</a>
+</nav>
+
+<!-- About -->
+<section id="about" class="section">
+  <div class="about-card">
+    <img class="headshot" src="assets/images/IMG_2364.jpg" alt="Photo of Justin Rzepko">
+    <div class="about-copy">
+      <h2>About Me</h2>
+      <p>
+        I’m a software engineer focused on building clean, reliable web apps and data-driven features.
+        I enjoy fast feedback loops, solid fundamentals, and shipping things that feel polished.
+      </p>
+      <ul class="about-list">
+        <li>Currently: CS @ SCSU, TA, ML + full-stack projects</li>
+        <li>Stack: Python, Django/DRF, React, PostgreSQL, AWS</li>
+        <li>Interests: ML for recommendations, clean UX, developer tooling</li>
+      </ul>
+      <div class="about-ctas">
+        <a class="btn" href="mailto:rzepkojustin@gmail.com">Email me</a>
+        <a class="btn ghost" href="assets/Justin_Rzepko_Resume.pdf" target="_blank" rel="noopener">View Resumé</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="carousel" aria-label="Skill cards carousel">
+    <button class="control prev" aria-label="Previous card" title="Previous">&#60;</button>
+
+    <div class="stage" id="stage" aria-live="polite">
+      <!-- Card 1 -->
+      <article class="card" data-title="Languages">
+        <h2>Languages</h2>
+        <div class="rule"></div>
+        <ul class="items">
+          <li><img alt="" src="assets/icons/python.svg"> Python <span class="badge">Primary</span></li>
+          <li><img alt="" src="assets/icons/java.svg"> Java</li>
+          <li><img alt="" src="assets/icons/RStudio.svg"> R</li>
+          <li><img alt="" src="assets/icons/haskell.svg"> Haskell</li>
+        </ul>
+      </article>
+
+      <!-- Card 2 --> <!--
+      <article class="card" data-title="Frameworks">
+        <h2>Frameworks</h2>
+        <div class="rule"></div>
+        <ul class="items">
+          <li><img alt="" src="assets/icons/react.svg"> React</li>
+          <li><img alt="" src="assets/icons/flutter.svg"> Flutter</li>
+          <li><img alt="" src="assets/icons/tf.svg"> TensorFlow</li>
+          <li><img alt="" src="assets/icons/sklearn.svg"> scikit-learn</li>
+        </ul>
+      </article>
+-->
+      <!-- Card 3 -->
+      <article class="card" data-title="Backend & DB">
+        <h2>Backend &amp; DB</h2>
+        <div class="rule"></div>
+        <ul class="items">
+          <li><img alt="" src="assets/icons/django.svg"> Django / DRF</li>
+          <li><img alt="" src="assets/icons/postgresql.svg"> PostgreSQL</li>
+          <li><img alt="" src="assets/icons/docker.svg"> Docker</li>
+        </ul>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card" data-title="Cloud & DevOps">
+        <h2>Cloud &amp; DevOps</h2>
+        <div class="rule"></div>
+        <ul class="items">
+          <li><img alt="" src="assets/icons/aws.svg"> AWS (ECS, S3)</li>
+          <li><img alt="" src="assets/icons/gcp.svg"> GCP</li>
+          <li><img alt="" src="assets/icons/githubw.svg"> GitHub</li>
+        </ul>
+      </article>
+    </div>
+
+    <button class="control next" aria-label="Next card" title="Next">&#62;</button>
+    <p class="hint">Hint: swipe or use ◀ ▶ to rotate</p>
+  </section>
+
+  <!-- Projects -->
+<section id="projects" class="section">
+  <h2 class="section-title">Projects</h2>
+
+  <div class="projects-grid">
+    <!-- Project card -->
+    <article class="project">
+      <div class="project-media">
+        <img src="assets/projects/edaters-thumb.jpg" alt="eDaters matchmaking platform screenshot">
+      </div>
+      <div class="project-body">
+        <h3>eDaters — Matchmaking Platform</h3>
+        <p>
+          Full-stack web app for interest-based matchmaking. Role: lead dev (frontend + backend + infra).
+        </p>
+        <ul class="tags">
+          <li>Angular</li><li>Django/DRF</li><li>PostgreSQL</li><li>AWS</li>
+        </ul>
+        <div class="actions">
+          <a class="btn" href="#" target="_blank" rel="noopener">Live</a>
+          <a class="btn ghost" href="#" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-media">
+        <img src="assets/projects/workflow-thumb.jpg" alt="Workflow system screenshot">
+      </div>
+      <div class="project-body">
+        <h3>Request Workflow System</h3>
+        <p>
+          Internal tool to submit, triage, and track requests with role-based dashboards and analytics.
+        </p>
+        <ul class="tags">
+          <li>Flask</li><li>SQLAlchemy</li><li>GCP</li><li>Docker</li>
+        </ul>
+        <div class="actions">
+          <a class="btn" href="#" target="_blank" rel="noopener">Live</a>
+          <a class="btn ghost" href="#" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-media">
+        <img src="assets/projects/ml-thumb.png" alt="Health Insights report cover">
+      </div>
+      <div class="project-body">
+        <h3>Health Insights (ML)</h3>
+        <p>
+          Regression + classification experiments exploring health metrics, feature engineering, and evaluation.
+        </p>
+        <ul class="tags">
+          <li>R Studio</li><li>R</li>
+        </ul>
+        <div class="actions">
+  <a class="btn" href="pages/report-health-insights.html">Report</a>
+  <a class="btn ghost" href="#" target="_blank" rel="noopener">Code</a>
+</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <strong>Justin Rzepko</strong> — Software Engineer
+    </div>
+
+    <nav class="footer-links" aria-label="Footer">
+      <a href="mailto:rzepkojustin@gmail.com">Email</a>
+      <!-- Swap these with your real profiles when ready -->
+      <a href="https://github.com/yourhandle" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/yourhandle" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+
+    <div class="footer-right">
+      © <span id="year"> 2025 Justin Rzepko</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

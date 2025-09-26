@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Health Insights — Report</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Sticky toolbar -->
+  <header class="report-header">
+    <a class="btn ghost" href="../index.html#projects">← Back to portfolio</a>
+    <span class="report-title">Health Insights — Report</span>
+    <a class="btn" href="../assets/reports/health-insights.pdf" download>Download PDF</a>
+  </header>
+
+  <!-- Scrollable PDF viewer -->
+  <main class="pdf-container">
+    <iframe
+      class="pdf-frame"
+      src="../assets/reports/Finalnotebook.pdf"
+      title="Health Insights report PDF"
+      loading="lazy">
+    </iframe>
+    <p class="pdf-fallback">
+      If the PDF doesn’t load, <a href="../assets/reports/Finalnotebook.pdf" target="_blank" rel="noopener">open it in a new tab</a>.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <strong>Justin Rzepko</strong> — Software Engineer
+    </div>
+
+    <nav class="footer-links" aria-label="Footer">
+      <a href="mailto:rzepkojustin@gmail.com">Email</a>
+      <!-- Swap these with your real profiles when ready -->
+      <a href="https://github.com/yourhandle" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/yourhandle" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+
+    <div class="footer-right">
+      © <span id="year"> 2025 Justin Rzepko</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
