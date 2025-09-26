@@ -283,3 +283,20 @@ header a:hover{text-decoration:underline}
 /* Add a little extra gap after the last content section (Projects) */
 .section:last-of-type{ margin-bottom:48px; }
 
+/* Title row with GPA chip */
+.title-row{ display:flex; align-items:center; gap:10px; }
+
+.chip{
+  display:inline-flex; align-items:center;
+  padding:.18rem .55rem; border-radius:999px;
+  font-size:.82rem; font-weight:600; letter-spacing:.2px;
+  line-height:1;
+  border:1px solid rgba(255,255,255,.14);
+  color:var(--ink-dim);
+  background:rgba(255,255,255,.04);
+}
+.chip-accent{
+  color:var(--ink);
+  border-color: rgba(143,182,255,.45);
+  background: rgba(143,182,255,.12);
+}
