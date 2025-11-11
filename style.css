@@ -398,3 +398,99 @@ header a:hover{text-decoration:underline}
 }
 
 
+.exp-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards across */
+  gap: 1.75rem;
+}
+
+/* Tablet → 2 columns */
+@media (max-width: 900px) {
+  .exp-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile → 1 column */
+@media (max-width: 600px) {
+  .exp-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.exp {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 1.25rem 1.4rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  min-height: auto; /* remove forced equal height */
+}
+
+.exp-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.exp-points {
+  display: none; /* hidden until expanded */
+  margin-top: 0.25rem;
+  line-height: 1.45;
+}
+
+.exp.show-details .exp-points {
+  display: block;
+}
+
+.exp {
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.exp-summary {
+  margin-bottom: 1rem;
+}
+
+.exp-points {
+  display: none; /* we are not using bullet lists now */
+}
+
+/* This pushes tags to bottom so all cards align */
+.tags {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.exp-summary {
+  min-height: 66px; /* adjust until all 3 line up clean */
+  line-height: 1.45;
+  margin-bottom: 1.2rem;
+}
+
+.exp-role {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  max-height: 32px; /* forces a single row visually */
+  overflow: hidden;
+}

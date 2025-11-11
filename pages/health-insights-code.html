@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Health Insights — Code</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Your portfolio stylesheet -->
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Prism Syntax Highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-r.min.js" defer></script>
+
+  <style>
+    .code-container {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    pre {
+      background: #111418;
+      border-radius: 10px;
+      padding: 1.5rem;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="report-header">
+  <a class="btn ghost" href="../index.html#projects">← Back to portfolio</a>
+  <span class="report-title">Health Insights — Code</span>
+  <a class="btn" href="../assets/code/healthInsights.R" download>Download .R</a>
+</header>
+
+<main class="code-container">
+<pre><code class="language-r">
+# Title: Life Expectancy Data Research
+# Author: Justin Rzepko
+
+
+data <- read.csv("1a-lifeExpect.csv")
+data_missing <- read.csv("1a-lifeExpectMissing.csv", na.strings = c("", ".", "*"))
+
+
+data_missing$People.TV <- as.numeric(data_missing$People.TV)
+
+colSums(is.na(data_missing))
+str(data)
+
+# Fit a regression model for Life.Expectancy
+model_life_exp <- lm(Life.Expectancy ~ People.TV + People.Dr, data = data_missing, na.action = na.exclude); model_life_exp
+
+summary(model_life_exp)$r.squared
+
+# Scatterplot of People.DR vs. Life.Expectancy
+plot(data_missing$People.Dr, data_missing$Life.Expectancy,
+     main = "People.DR vs. Life Expectancy",
+     xlab = "People.DR",
+     ylab = "Life Expectancy",
+     pch = 19, col = "blue")
+
+# Add the regression line
+abline(lm(Life.Expectancy ~ People.Dr, data = data_missing), col = "red", lwd = 2)
+
+
+# Predict Life.Expectancy using the model
+predicted_values <- predict(model_life_exp, newdata = data_missing)
+
+# Create scatterplot: Observed vs. Predicted
+plot(data_missing$Life.Expectancy, predicted_values, 
+     main = "Observed vs. Predicted Life Expectancy",
+     xlab = "Observed Life Expectancy",
+     ylab = "Predicted Life Expectancy",
+     pch = 19, col = "blue")
+
+# Add a reference line for perfect prediction
+abline(0, 1, col = "red", lwd = 2)
+
+
+# Find rows where Female.Life.Expectancy is missing
+missing_indices_flife_exp <- which(is.na(data_missing$Female.Life.Expectancy)); missing_indices_flife_exp
+
+# Predict Female.Life.Expectancy for missing rows
+predicted_flife_exp <- predict(model_life_exp, newdata = data_missing[missing_indices_flife_exp, ]); predicted_flife_exp
+
+# Replace missing Female.Life.Expectancy values with predictions
+data_missing$Female.Life.Expectancy[missing_indices_flife_exp] <- round(predicted_flife_exp)
+
+# Convert Country column to a factor if not already
+data_missing$Country <- as.factor(data_missing$Country)
+
+# Fit a logistic regression model to predict Country based on People.TV and People.DR
+model_country <- glm(Country ~ People.TV + People.Dr, data = data_missing, family = binomial, na.action = na.exclude)
+summary(model_country)
+
+# Find rows where Country is missing
+missing_indices_country <- which(is.na(data_missing$Country))
+
+# Predict probabilities for the missing rows
+predicted_probs_country <- predict(model_country, newdata = data_missing[missing_indices_country, ], type = "response")
+
+# Assign the most likely Country based on predicted probabilities
+data_missing$Country[missing_indices_country] <- ifelse(predicted_probs_country > 0.5, "Country1", "Country2")
+
+
+# Summary of the dataset
+summary(data)
+
+
+mean(data$Life.Expectancy, na.rm = TRUE)
+# On average, individualsd in the dataset have a life expectancy of approximately
+# 67 years.
+median(data$Life.Expectancy, na.rm = TRUE)
+
+sd(data$Life.Expectancy, na.rm = TRUE)
+range(data$Life.Expectancy, na.rm = TRUE)
+
+
+# Check for missing values
+colSums(is.na(data))
+
+# Impute missing values (example: using the mean for numeric variables)
+# Convert People.TV and People.DR to numeric
+data$People.TV <- as.numeric(as.character(data$People.TV))
+data$People.DR <- as.numeric(as.character(data$People.Dr))
+
+data$Life.Expectancy[is.na(data$Life.Expectancy)] <- mean(data$Life.Expectancy, na.rm = TRUE)
+data$People.TV[is.na(data$People.TV)] <- mean(data$People.TV, na.rm = TRUE)
+data$People.DR[is.na(data$People.Dr)] <- mean(data$People.Dr, na.rm = TRUE)
+
+
+# Boxplot for life expectancy by sex
+boxplot(data$Male.Life.Expectancy, data$Female.Life.Expectancy,
+        names = c("Male", "Female"),
+        main = "Life Expectancy by Sex",
+        ylab = "Life Expectancy (Years)")
+
+# Histogram for People/TV and People/Doctor Ratios
+
+par(mfrow = c(1, 2))
+hist(data$People.TV, main = "Distribution of People per TV", xlab = "People/TV Ratio", breaks = 10)
+hist(data$People.Dr, main = "Distribution of People per Doctor", xlab = "People/Doctor Ratio", breaks = 10)
+
+# Research Question 1: Do life expectancies differ by sex?
+# Perform a paired t-test
+t_test_result <- t.test(data$Male.Life.Expectancy, data$Female.Life.Expectancy, paired = TRUE)
+print(t_test_result)
+
+
+# Research Question 2: Does TV or Doctor Ratio associate with life expectancies?
+
+# Calculate correlation manually
+cor_tv <- cor(data$People.TV, data$Life.Expectancy, use = "complete.obs")
+cor_dr <- cor(data$People.Dr, data$Life.Expectancy, use = "complete.obs")
+
+print(cor_tv)
+print(cor_dr)
+
+# Scatterplots
+plot(data$People.TV, data$Life.Expectancy, main = "Life Expectancy vs. People per TV",
+     xlab = "People/TV Ratio", ylab = "Life Expectancy", pch = 19)
+abline(lm(data$Life.Expectancy ~ data$People.TV), col = "red")
+
+plot(data$People.Dr, data$Life.Expectancy, main = "Life Expectancy vs. People per Doctor",
+     xlab = "People/Doctor Ratio", ylab = "Life Expectancy", pch = 19)
+abline(lm(data$Life.Expectancy ~ data$People.Dr), col = "blue")
+
+
+# Multiple Linear Regression
+model <- lm(Life.Expectancy ~ People.TV + People.Dr, data = data)
+summary(model)
+
+# Manually check residuals for assumptions
+plot(model$residuals, main = "Residuals Plot", ylab = "Residuals", xlab = "Fitted Values")
+abline(h = 0, col = "red")
+
+</code></pre>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-left"><strong>Justin Rzepko</strong></div>
+    <nav class="footer-links">
+      <a href="mailto:rzepkojustin@gmail.com">Email</a>
+      <a href="https://github.com/yourhandle" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/yourhandle" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+    <div class="footer-right">
+      © <span id="year">2025 Justin Rzepko</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
