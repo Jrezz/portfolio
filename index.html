@@ -3,280 +3,295 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Justin Rzepko — Portfolio</title>
-
-  <!-- Font + CSS -->
+  <title>Justin Rzepko — CS Graduate</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
-  <!-- Construction Banner -->
-  <style>
-  @keyframes fadeOutUp {
-    0% {
-      opacity: 1;
-      transform: translate(-50%, 0);
-    }
-    100% {
-      opacity: 0;
-      transform: translate(-50%, -12px);
-    }
-  }
-
-  .fade-out-banner {
-    animation: fadeOutUp 0.35s ease forwards;
-  }
-</style>
-
-
 </head>
 
 <body>
 
-  <header>
-    <h1>Justin Rzepko</h1>
-    <p>Software Engineer • ML • Web — <a href="mailto:rzepkojustin@gmail.com">rzepkojustin@gmail.com</a></p>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <header class="topbar" id="topbar">
+    <div class="topbar-inner">
+      <a class="topbar-brand" href="#">Justin Rzepko</a>
+      <nav class="top-nav" aria-label="Primary">
+        <a href="#about" data-nav="about">About</a>
+        <a href="#experience" data-nav="experience">Experience</a>
+        <a href="#projects" data-nav="projects">Projects</a>
+        <a class="btn resume-btn" href="assets/UPDATEDRESUMEJUSTIN.pdf" target="_blank" rel="noopener">Résumé ↗</a>
+      </nav>
+    </div>
   </header>
-  
 
-  <!-- Quick nav (optional but nice) -->
-<nav class="top-nav" aria-label="Primary">
-  <a href="#about">About</a>
-  <a href="#internships">Experience</a>
-  <a href="#projects">Projects</a>
-  <a href="assets/UPDATEDRESUMEJUSTIN.pdf" target="_blank" rel="noopener">Résumé</a>
-</nav>
-
-<section id="about" class="section">
-  <div class="about-card">
-    <img class="headshot" src="assets/images/IMG_2364.jpg" alt="Photo of Justin Rzepko">
-    <div class="about-copy">
-
-      <!-- Title + subtle GPA chip -->
-      <div class="title-row">
-        <h2>About Me</h2>
-        <span class="chip chip-accent" aria-label="GPA 4.0">GPA&nbsp;4.0</span>
-      </div>
-
-      <p>
-        I’m a software engineer specializing in full-stack development and machine learning systems. 
-        I focus on building maintainable, scalable, and efficient applications.
-      </p>
-      <ul class="about-list">
-        <li>Currently: CS @ SCSU (GPA 4.0), TA, ML + full-stack projects</li>
-        <li>Stack: Python, Django/DRF, React, PostgreSQL, AWS</li>
-        <li>Interests: ML systems, UX design, dev tools</li>
-      </ul>
-
-      <div class="about-ctas">
-        <a class="btn" href="mailto:rzepkojustin@gmail.com">Email me</a>
-        <a class="btn ghost" href="assets/Rzepko_RES.pdf" target="_blank" rel="noopener">View Résumé</a>
-      </div>
+  <!-- Hero -->
+  <section class="hero reveal">
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      Open to opportunities
     </div>
-  </div>
-</section>
-
-
-  <section class="carousel" aria-label="Skill cards carousel">
-    <button class="control prev" aria-label="Previous card" title="Previous">&#60;</button>
-
-    <div class="stage" id="stage" aria-live="polite">
-      <!-- Card 1 -->
-      <article class="card" data-title="Languages">
-        <h2>Languages</h2>
-        <div class="rule"></div>
-        <ul class="items">
-          <li><img alt="" src="assets/icons/python.svg"> Python <span class="badge">Primary</span></li>
-          <li><img alt="" src="assets/icons/java.svg"> Java</li>
-          <li><img alt="" src="assets/icons/RStudio.svg"> R</li>
-          <li><img alt="" src="assets/icons/haskell.svg"> Haskell</li>
-        </ul>
-      </article>
-
-      <!-- Card 2 --> <!--
-      <article class="card" data-title="Frameworks">
-        <h2>Frameworks</h2>
-        <div class="rule"></div>
-        <ul class="items">
-          <li><img alt="" src="assets/icons/react.svg"> React</li>
-          <li><img alt="" src="assets/icons/flutter.svg"> Flutter</li>
-          <li><img alt="" src="assets/icons/tf.svg"> TensorFlow</li>
-          <li><img alt="" src="assets/icons/sklearn.svg"> scikit-learn</li>
-        </ul>
-      </article>
--->
-      <!-- Card 3 -->
-      <article class="card" data-title="Backend & DB">
-        <h2>Backend &amp; DB</h2>
-        <div class="rule"></div>
-        <ul class="items">
-          <li><img alt="" src="assets/icons/django.svg"> Django / DRF</li>
-          <li><img alt="" src="assets/icons/postgresql.svg"> PostgreSQL</li>
-          <li><img alt="" src="assets/icons/docker.svg"> Docker</li>
-          <li><img alt="" src="assets/icons/flask.svg"> Flask</li>
-          
-
-        </ul>
-      </article>
-
-      <!-- Card 4 -->
-      <article class="card" data-title="Cloud & DevOps">
-        <h2>Cloud &amp; DevOps</h2>
-        <div class="rule"></div>
-        <ul class="items">
-          <li><img alt="" src="assets/icons/aws.svg"> AWS (ECS, S3)</li>
-          <li><img alt="" src="assets/icons/gcp.svg"> GCP</li>
-          <li><img alt="" src="assets/icons/githubw.svg"> GitHub</li>
-        </ul>
-      </article>
-    </div>
-
-    <button class="control next" aria-label="Next card" title="Next">&#62;</button>
-    <p class="hint">Hint: swipe or use ◀ ▶ to rotate</p>
-  </section>
-  <p class="hint" style="margin-top:6px;">
-  <a href="#internships" style="color:var(--accent); text-decoration:none;">See Experience ↓</a>
-</p>
-
-
-  <section id="internships" class="section">
-  <h2 class="section-title">Experience</h2>
-
-  <div class="exp-list">
-    <!-- Internship 1 -->
-    <article class="exp">
-      <img class="exp-logo" src="assets/companies/acme.svg" alt="Acme Health logo" onerror="this.style.display='none'">
-      <div class="exp-body">
-        <div class="exp-top">
-          <h3 class="exp-role">Google Software Engineering Program</h3>
-          <span class="exp-dates">January 2025 – May 2025 · Remote</span>
-        </div>
-        <p class="exp-summary">
-            
-          10-week Google SWE mentorship focused on DS&A, pair programming, and code reviews.
-        </p>
-        <ul class="exp-points">
-          <li>Selected for a competitive 10-week 1:1 mentorship with a Google Software Engineer; completed weekly pair-programming sessions and code reviews.</li>
-          <li>Participated in team-based coding challenges, strengthening communication and collaboration skills.</li>
-          <li>Developed and optimized algorithms in Python to solve real-world coding problems.</li>
-        </ul>
-        <ul class="tags"><li>Python</li></ul>
-      </div>
-    </article>
-
-    <!-- Experience 3 -->
-<article class="exp">
-  <img class="exp-logo" src="assets/companies/buenavista.svg" alt="BuenaVista Information Systems logo" onerror="this.style.display='none'">
-  <div class="exp-body">
-    <div class="exp-top">
-      <h3 class="exp-role">IT Support and Development</h3>
-      <span class="exp-dates">October 2025 – Present · North Charleston, SC</span>
-    </div>
-    <p class="exp-summary">
-      IT support and automation development within managed service provider (MSP) environments.
+    <p class="hero-eyebrow">Hi, I'm</p>
+    <h1 class="hero-name">Justin Rzepko</h1>
+    <p class="hero-role">
+      Interested in <span id="typewriter"></span><span class="type-cursor" aria-hidden="true">|</span>
     </p>
-    <ul class="exp-points">
-  <li>Automated repetitive workflows using <strong>Python</strong> and <strong>Power Automate</strong>, improving technician throughput.</li>
-  <li>Authored <strong>SOPs</strong> and documentation for scalable IT processes.</li>
-  <li>Reduced recurring service desk task time by <strong>~3–6 minutes</strong> per request through automation.</li>
-  <li>Identified workflow bottlenecks and proposed efficiency optimizations.</li>
-</ul>
-    <ul class="tags">
-      <li>Python</li><li>Power Automate</li>
-    </ul>
-  </div>
-</article>
+    <p class="hero-desc">
+      CS graduate with a mathematics minor, building skills and projects in data engineering,
+      software development, and machine learning.
+    </p>
+    <div class="hero-ctas">
+      <a class="btn" href="#projects">View Work ↓</a>
+      <a class="btn ghost" href="mailto:rzepkojustin@gmail.com">Get in Touch</a>
+    </div>
+  </section>
 
+  <!-- What I Build -->
+  <section class="section">
+    <h2 class="section-title">What I Build</h2>
+    <div class="focus-grid">
 
-    <!-- Internship 2 -->
-    <article class="exp">
-      <img class="exp-logo" src="assets/companies/contoso.svg" alt="Contoso logo" onerror="this.style.display='none'">
-      <div class="exp-body">
-        <div class="exp-top">
-          <h3 class="exp-role">Teacher's Assistant · SCSU</h3>
-          <span class="exp-dates">January 2025 – Present · New Haven, CT</span>
+      <div class="focus-card reveal">
+        <div class="focus-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="12" cy="5" rx="9" ry="3"/>
+            <path d="M3 5v4c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/>
+            <path d="M3 9v4c0 1.66 4.03 3 9 3s9-1.34 9-3V9"/>
+            <path d="M3 13v4c0 1.66 4.03 3 9 3s9-1.34 9-3v-4"/>
+          </svg>
         </div>
-        <p class="exp-summary">
-          CS TA—labs, office hours, grading, and targeted coding feedback.
-        </p>
-        <ul class="exp-points">
-          <li>Evaluated and graded assignments, projects, and exams for undergraduate Computer Science courses with accuracy and attention to detail.</li>
-          <li>Provided constructive feedback to students to support their understanding of course material and improve their coding and problem-solving skills.</li>
-          <li>Collaborated with course instructors to clarify grading criteria and ensure fair evaluation of student work.</li>
-        </ul>
-        <ul class="tags"><li>Blackboard</li></ul>
+        <h3>Data Engineering</h3>
+        <p>Designing ETL pipelines and data workflows that reliably move and transform data at scale.</p>
       </div>
-    </article>
-  </div>
-</section>
 
+      <div class="focus-card reveal">
+        <div class="focus-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <h3>Software Engineering</h3>
+        <p>Full-stack APIs and backend systems built with clean architecture and solid foundations.</p>
+      </div>
+
+      <div class="focus-card reveal">
+        <div class="focus-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <circle cx="3.5" cy="6.5" r="1.5"/>
+            <circle cx="20.5" cy="6.5" r="1.5"/>
+            <circle cx="3.5" cy="17.5" r="1.5"/>
+            <circle cx="20.5" cy="17.5" r="1.5"/>
+            <line x1="5" y1="7.2" x2="10.3" y2="10.8"/>
+            <line x1="19" y1="7.2" x2="13.7" y2="10.8"/>
+            <line x1="5" y1="16.8" x2="10.3" y2="13.2"/>
+            <line x1="19" y1="16.8" x2="13.7" y2="13.2"/>
+          </svg>
+        </div>
+        <h3>Machine Learning</h3>
+        <p>Applying statistical models and ML techniques to extract patterns and insights from complex data.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section reveal">
+    <div class="about-card">
+      <img class="headshot" src="assets/images/IMG_2364.jpg" alt="Photo of Justin Rzepko">
+      <div class="about-copy">
+        <div class="title-row">
+          <h2>About Me</h2>
+          <span class="chip chip-accent" aria-label="GPA 4.0">GPA&nbsp;4.0</span>
+        </div>
+        <p>
+          Recent CS graduate with a mathematics minor, passionate about turning data into something
+          meaningful. I'm actively building skills and projects in data engineering, software
+          development, and machine learning.
+        </p>
+        <ul class="about-list">
+          <li>B.S. Computer Science · Math Minor · SCSU (GPA 4.0)</li>
+          <li>Stack: Python, SQL, scikit-learn, Django, PostgreSQL, AWS</li>
+          <li>Seeking: Data Engineering · Software Engineering · ML roles</li>
+        </ul>
+        <div class="about-ctas">
+          <a class="btn" href="mailto:rzepkojustin@gmail.com">Email me</a>
+          <a class="btn ghost" href="assets/UPDATEDRESUMEJUSTIN.pdf" target="_blank" rel="noopener">View Résumé</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills -->
+  <section id="skills" class="section skills-section">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="carousel reveal" aria-label="Skill cards carousel">
+      <button class="control prev" aria-label="Previous card" title="Previous">&#60;</button>
+
+      <div class="stage" id="stage" aria-live="polite">
+
+        <article class="card" data-title="Languages">
+          <h2>Languages</h2>
+          <div class="rule"></div>
+          <ul class="items">
+            <li><img alt="" src="assets/icons/python.svg"> Python <span class="badge">Primary</span></li>
+            <li><img alt="" src="assets/icons/sql.svg"> SQL</li>
+            <li><img alt="" src="assets/icons/java.svg"> Java</li>
+            <li><img alt="" src="assets/icons/RStudio.svg"> R</li>
+          </ul>
+        </article>
+
+        <article class="card" data-title="Data & ML">
+          <h2>Data &amp; ML</h2>
+          <div class="rule"></div>
+          <ul class="items">
+            <li><img alt="" src="assets/icons/sklearn.svg"> scikit-learn</li>
+            <li><img alt="" src="assets/icons/pandas.svg"> pandas</li>
+            <li><img alt="" src="assets/icons/numpy.svg"> NumPy</li>
+            <li><img alt="" src="assets/icons/jupyter.svg"> Jupyter</li>
+          </ul>
+        </article>
+
+        <article class="card" data-title="Backend & DB">
+          <h2>Backend &amp; DB</h2>
+          <div class="rule"></div>
+          <ul class="items">
+            <li><img alt="" src="assets/icons/django.svg"> Django / DRF</li>
+            <li><img alt="" src="assets/icons/postgresql.svg"> PostgreSQL</li>
+            <li><img alt="" src="assets/icons/docker.svg"> Docker</li>
+            <li><img alt="" src="assets/icons/flask.svg"> Flask</li>
+          </ul>
+        </article>
+
+        <article class="card" data-title="Cloud & DevOps">
+          <h2>Cloud &amp; DevOps</h2>
+          <div class="rule"></div>
+          <ul class="items">
+            <li><img alt="" src="assets/icons/aws.svg"> AWS (ECS, S3)</li>
+            <li><img alt="" src="assets/icons/gcp.svg"> GCP</li>
+            <li><img alt="" src="assets/icons/githubw.svg"> GitHub</li>
+          </ul>
+        </article>
+
+      </div>
+
+      <button class="control next" aria-label="Next card" title="Next">&#62;</button>
+
+      <div class="carousel-dots" aria-hidden="true">
+        <button class="dot active" aria-label="Card 1"></button>
+        <button class="dot" aria-label="Card 2"></button>
+        <button class="dot" aria-label="Card 3"></button>
+        <button class="dot" aria-label="Card 4"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <h2 class="section-title">Experience</h2>
+    <div class="exp-list">
+
+      <article class="exp reveal">
+        <div class="exp-body">
+          <div class="exp-top">
+            <h3 class="exp-role">Google Software Engineering Program</h3>
+            <span class="exp-dates">Jan 2025 – May 2025 · Remote</span>
+          </div>
+          <p class="exp-summary">
+            Competitive 1:1 mentorship with a Google SWE. Focused on DS&A, pair programming, and code reviews.
+          </p>
+          <ul class="tags"><li>Python</li><li>Algorithms</li><li>DS&A</li></ul>
+        </div>
+      </article>
+
+      <article class="exp reveal">
+        <div class="exp-body">
+          <div class="exp-top">
+            <h3 class="exp-role">IT Support &amp; Development</h3>
+            <span class="exp-dates">Oct 2025 – Present · N. Charleston, SC</span>
+          </div>
+          <p class="exp-summary">
+            Automated MSP workflows with Python and Power Automate, cutting per-request task time by 3–6 minutes.
+          </p>
+          <ul class="tags"><li>Python</li><li>Power Automate</li><li>Automation</li></ul>
+        </div>
+      </article>
+
+      <article class="exp reveal">
+        <div class="exp-body">
+          <div class="exp-top">
+            <h3 class="exp-role">Teacher's Assistant · SCSU</h3>
+            <span class="exp-dates">Jan 2025 – Present · New Haven, CT</span>
+          </div>
+          <p class="exp-summary">
+            CS TA for undergraduate courses — labs, office hours, grading, and targeted coding feedback.
+          </p>
+          <ul class="tags"><li>Computer Science</li><li>Mentorship</li></ul>
+        </div>
+      </article>
+
+    </div>
+  </section>
 
   <!-- Projects -->
-<section id="projects" class="section">
-  <h2 class="section-title">Projects</h2>
+  <section id="projects" class="section">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
 
-  <div class="projects-grid">
-    <!-- Project card -->
-    <article class="project">
-      <div class="project-media">
-        <img src="assets/projects/admindashupdated.png" alt="Workflow system screenshot">
-      </div>
-      <div class="project-body">
-        <h3>Request Workflow System</h3>
-        <p>
-          Internal tool to submit, triage, and track requests with role-based dashboards and analytics.
-        </p>
-        <ul class="tags">
-          <li>Flask</li><li>SQLAlchemy</li><li>GCP</li><li>Docker</li>
-        </ul>
-        <div class="actions">
-          <a class="btn ghost" href="https://github.com/Jrezz/Request-Workflow" target="_blank" rel="noopener">Code</a>
+      <article class="project reveal">
+        <div class="project-media">
+          <img src="assets/projects/admindashupdated.png" alt="Workflow system screenshot">
         </div>
-      </div>
-    </article>
+        <div class="project-body">
+          <h3>Request Workflow System</h3>
+          <p>Internal tool to submit, triage, and track service requests with role-based dashboards and real-time analytics.</p>
+          <ul class="tags">
+            <li>Flask</li><li>SQLAlchemy</li><li>GCP</li><li>Docker</li>
+          </ul>
+          <div class="actions">
+            <a class="btn ghost" href="https://github.com/Jrezz/Request-Workflow" target="_blank" rel="noopener">Code ↗</a>
+          </div>
+        </div>
+      </article>
 
-    <article class="project">
-      <div class="project-media">
-        <img src="assets/projects/ml-thumb.png" alt="Health Insights report cover">
-      </div>
-      <div class="project-body">
-        <h3>Health Insights</h3>
-        <p>
-          Regression + classification experiments exploring health metrics, feature engineering, and evaluation.
-        </p>
-        <ul class="tags">
-          <li>R Studio</li><li>R</li>
-        </ul>
-        <div class="actions">
-  <a class="btn" href="pages/report-health-insights.html">Report</a>
-  <a class="btn ghost" href="pages/health-insights-code.html" target="_blank" rel="noopener">Code</a>
-</div>
-      </div>
-    </article>
-  </div>
-</section>
+      <article class="project reveal">
+        <div class="project-media">
+          <img src="assets/projects/ml-thumb.png" alt="Health Insights report cover">
+        </div>
+        <div class="project-body">
+          <h3>Health Insights — ML Analysis</h3>
+          <p>Regression and classification models on health metrics with feature engineering, EDA, and full evaluation.</p>
+          <ul class="tags">
+            <li>R</li><li>Regression</li><li>Classification</li><li>EDA</li>
+          </ul>
+          <div class="actions">
+            <a class="btn" href="pages/report-health-insights.html">Report</a>
+            <a class="btn ghost" href="pages/health-insights-code.html" target="_blank" rel="noopener">Code ↗</a>
+          </div>
+        </div>
+      </article>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-left">
-      <strong>Justin Rzepko</strong> — Software Engineer
     </div>
+  </section>
 
-    <nav class="footer-links" aria-label="Footer">
-      <a href="mailto:rzepkojustin@gmail.com">Email</a>
-      <!-- Swap these with your real profiles when ready -->
-      <a href="https://github.com/Jrezz" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-    </nav>
-
-    <div class="footer-right">
-      © <span id="year"> 2025 Justin Rzepko</span>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <strong>Justin Rzepko</strong> — CS Graduate · Math Minor
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="mailto:rzepkojustin@gmail.com">Email</a>
+        <a href="https://github.com/Jrezz" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/justin-rzepko-441634174/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+      <div class="footer-right">
+        © <span id="year"></span> Justin Rzepko
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
   <script src="main.js" defer></script>
-
 
 </body>
 </html>

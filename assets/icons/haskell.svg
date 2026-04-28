@@ -1,12 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 -37.5 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
-    <g>
-				<polygon fill="#453A62" points="0 180.591468 60.2352941 90.2969514 0 0 45.1764706 0 105.411765 90.2969514 45.1764706 180.591468">
-</polygon>
-				<polygon fill="#5E5086" points="60.2352941 180.591468 120.470588 90.2969514 60.2352941 0 105.411765 0 225.877484 180.591468 180.705882 180.591468 143.061258 124.158612 105.40933 180.591468">
-</polygon>
-				<path d="M205.803922,127.919667 L185.72549,97.8190601 L256,97.8190601 L256,127.922101 L205.803922,127.922101 L205.803922,127.919667 Z M175.686275,82.7748426 L155.607843,52.6742359 L256,52.6742359 L256,82.7748426 L175.686275,82.7748426 Z" fill="#8F4E8B">
-</path>
-		</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -37.5 256 256">
+  <!-- left chevron — brightest so it anchors the shape -->
+  <polygon fill="#9C8EC4" points="0 180.591 60.235 90.297 0 0 45.176 0 105.412 90.297 45.176 180.591"/>
+  <!-- middle chevron -->
+  <polygon fill="#7B6AAD" points="60.235 180.591 120.471 90.297 60.235 0 105.412 0 225.877 180.591 180.706 180.591 143.061 124.159 105.409 180.591"/>
+  <!-- equals bars — lightest accent -->
+  <path fill="#B07FC0" d="M205.804 127.92 L185.725 97.819 L256 97.819 L256 127.922 Z M175.686 82.775 L155.608 52.674 L256 52.674 L256 82.775 Z"/>
 </svg>

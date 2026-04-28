@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Orbital ellipse -->
+  <ellipse cx="16" cy="16" rx="13.5" ry="7" fill="none" stroke="#F37726" stroke-width="1.6" opacity="0.55" transform="rotate(-35 16 16)"/>
+  <ellipse cx="16" cy="16" rx="13.5" ry="7" fill="none" stroke="#9E9E9E" stroke-width="1.2" opacity="0.35" transform="rotate(35 16 16)"/>
+  <!-- Three circles — top orange, bottom-left and bottom-right grey -->
+  <circle cx="16"   cy="5.5"  r="4"   fill="#F37726"/>
+  <circle cx="8.5"  cy="24"   r="3"   fill="#767676"/>
+  <circle cx="23.5" cy="24"   r="3"   fill="#767676"/>
+  <!-- Highlight on top circle -->
+  <circle cx="14.5" cy="4.2"  r="1.5" fill="white" opacity="0.35"/>
+</svg>

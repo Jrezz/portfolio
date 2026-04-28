@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Left column — pandas purple -->
+  <rect x="3.5" y="2.5" width="9" height="27" rx="2.5" fill="#150458"/>
+  <!-- Right column — pandas pink -->
+  <rect x="19.5" y="2.5" width="9" height="27" rx="2.5" fill="#E70488"/>
+  <!-- Upper row connector -->
+  <rect x="3.5" y="9"  width="25" height="5.5" rx="2" fill="#7C3AED" opacity="0.65"/>
+  <!-- Lower row connector -->
+  <rect x="3.5" y="18" width="25" height="5.5" rx="2" fill="#BE185D" opacity="0.65"/>
+</svg>

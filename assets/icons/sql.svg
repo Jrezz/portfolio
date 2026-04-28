@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- top cap -->
+  <ellipse cx="16" cy="7.5" rx="11.5" ry="3.8" fill="#5B9BD5"/>
+  <!-- body top half -->
+  <rect x="4.5" y="7.5" width="23" height="8.5" fill="#3A78B5"/>
+  <!-- mid cap -->
+  <ellipse cx="16" cy="16" rx="11.5" ry="3.8" fill="#5B9BD5" opacity="0.92"/>
+  <!-- body bottom half -->
+  <rect x="4.5" y="16" width="23" height="8.5" fill="#2D5F9E"/>
+  <!-- bottom cap -->
+  <ellipse cx="16" cy="24.5" rx="11.5" ry="3.8" fill="#5B9BD5" opacity="0.85"/>
+  <!-- highlight line on top cap -->
+  <ellipse cx="14" cy="6.5" rx="5" ry="1.5" fill="white" opacity="0.18"/>
+</svg>
