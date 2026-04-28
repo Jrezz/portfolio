@@ -1,11 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- Orbital ellipse -->
-  <ellipse cx="16" cy="16" rx="13.5" ry="7" fill="none" stroke="#F37726" stroke-width="1.6" opacity="0.55" transform="rotate(-35 16 16)"/>
-  <ellipse cx="16" cy="16" rx="13.5" ry="7" fill="none" stroke="#9E9E9E" stroke-width="1.2" opacity="0.35" transform="rotate(35 16 16)"/>
-  <!-- Three circles — top orange, bottom-left and bottom-right grey -->
-  <circle cx="16"   cy="5.5"  r="4"   fill="#F37726"/>
-  <circle cx="8.5"  cy="24"   r="3"   fill="#767676"/>
-  <circle cx="23.5" cy="24"   r="3"   fill="#767676"/>
-  <!-- Highlight on top circle -->
-  <circle cx="14.5" cy="4.2"  r="1.5" fill="white" opacity="0.35"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 430">
+  <!-- Top orange crescent -->
+  <path fill="#F37726" fill-rule="evenodd"
+        d="M 55,172 C 18,18 352,18 315,172 C 290,82 80,82 55,172 Z"/>
+  <!-- Bottom orange crescent -->
+  <path fill="#F37726" fill-rule="evenodd"
+        d="M 55,262 C 18,418 352,418 315,262 C 290,350 80,350 55,262 Z"/>
+  <!-- Three circles — light so they show on dark backgrounds -->
+  <circle cx="58"  cy="68"  r="46" fill="#e0e0e0"/>
+  <circle cx="312" cy="48"  r="38" fill="#e0e0e0"/>
+  <circle cx="50"  cy="390" r="52" fill="#e0e0e0"/>
+  <!-- "jupyter" text — white so it shows on dark backgrounds -->
+  <text x="185" y="238"
+        font-family="Arial, Helvetica, sans-serif"
+        font-weight="400"
+        font-size="78"
+        fill="white"
+        text-anchor="middle">jupyter</text>
 </svg>
